@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Divyani Kanawat | Data Scientist</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 50%, #90caf9 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            color: #1565c0;
+            margin-bottom: 40px;
+            padding: 40px 0;
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .header p {
+            font-size: 1.3rem;
+            color: #1976d2;
+            font-weight: 400;
+            margin-top: 5px;
+        }
+
+        .experience-section {
+            margin-bottom: 40px;
+        }
+
+        .experience-card {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 8px 25px rgba(21, 101, 192, 0.15);
+            border: 1px solid rgba(144, 202, 249, 0.3);
+            text-align: center;
+        }
+
+        .experience-card h2 {
+            color: #1565c0;
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+
+        .experience-card p {
+            color: #555;
+            font-size: 1.1rem;
+            line-height: 1.7;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .projects-section {
+            margin-bottom: 40px;
+        }
+
+        .section-title {
+            text-align: center;
+            color: #1976d2;
+            font-size: 2rem;
+            margin-bottom: 30px;
+            font-weight: 500;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        .platform-card {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 8px 25px rgba(21, 101, 192, 0.15);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(144, 202, 249, 0.3);
+        }
+
+        .platform-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(21, 101, 192, 0.25);
+        }
+
+        .platform-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #e3f2fd;
+        }
+
+        .platform-icon {
+            width: 50px;
+            height: 50px;
+            margin-right: 15px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+
+        .github-icon { background: linear-gradient(135deg, #42a5f5, #1976d2); }
+        .tableau-icon { background: linear-gradient(135deg, #64b5f6, #1e88e5); }
+        .rpubs-icon { background: linear-gradient(135deg, #81c784, #43a047); }
+
+
+        .platform-info h3 {
+            font-size: 1.3rem;
+            color: #1565c0;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        .platform-info p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .project-item {
+            margin-bottom: 8px;
+            padding: 10px 12px;
+            background: linear-gradient(135deg, #f8fbff, #e8f4f8);
+            border-radius: 8px;
+            border-left: 3px solid #42a5f5;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .project-item:hover {
+            transform: translateX(5px);
+            background: linear-gradient(135deg, #fff, #f0f8ff);
+            box-shadow: 0 3px 10px rgba(66, 165, 245, 0.2);
+        }
+
+        .project-link {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        .project-title {
+            font-weight: 500;
+            color: #1565c0;
+            font-size: 0.95rem;
+        }
+
+        .contact-section {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 8px 25px rgba(21, 101, 192, 0.15);
+            border: 1px solid rgba(144, 202, 249, 0.3);
+        }
+
+        .contact-section h2 {
+            color: #1565c0;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+            font-weight: 500;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .contact-item {
+            color: #666;
+            font-size: 1.1rem;
+        }
+
+        .contact-link {
+            color: #1976d2;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .contact-link:hover {
+            color: #0d47a1;
+            text-decoration: underline;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .projects-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .platform-card {
+                padding: 20px;
+            }
+        }
+
+        /* Smooth animations */
+        .platform-card {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        .platform-card:nth-child(1) { animation-delay: 0.1s; }
+        .platform-card:nth-child(2) { animation-delay: 0.2s; }
+        .platform-card:nth-child(3) { animation-delay: 0.3s; }
+        .platform-card:nth-child(4) { animation-delay: 0.4s; }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Divyani Kanawat</h1>
+            <p>Data Scientist</p>
+        </header>
+        <!-- Experience Section -->
+        <section class="experience-section">
+            <div class="experience-card">
+                <h2>Experience</h2>
+                <p>With over 9 years of experience in data science and analytics, I specialize in machine learning, statistical modeling, and business intelligence. My work spans various industries where I've successfully implemented predictive models, automated data pipelines, and created actionable insights that drive business growth.</p>
+            </div>
+        </section>
+
+        <section class="projects-section">
+            <h2 class="section-title">My Projects</h2>
+            
+            <div class="projects-grid">
+                <!-- GitHub Section -->
+                <div class="platform-card">
+                    <div class="platform-header">
+                        <div class="platform-icon github-icon">⚡</div>
+                        <div class="platform-info">
+                            <h3>GitHub</h3>
+                            <p>Code & Development</p>
+                        </div>
+                    </div>
+                    
+                    <div class="projects-list">
+                        <div class="project-item">
+                            <a href="https://github.com/dkanawat/RFM-Customer-Segmentation" class="project-link">
+                                <div class="project-title">RFM Customer Segmentation</div>
+                            </a>
+                        </div>
+                        <div class="project-item">
+                            <a href="https://github.com/dkanawat/Marketing-ML-Project" class="project-link">
+                                <div class="project-title">Marketing ML Project</div>
+                            </a>
+                        </div>
+                        <div class="project-item">
+                            <a href="https://github.com/dkanawat/Data-Visualization-Tableau" class="project-link">
+                                <div class="project-title">Data Visualization Tableau</div>
+                            </a>
+                        </div>
+                        <div class="project-item">
+                            <a href="https://github.com/dkanawat/NYC_Airbnb_Python" class="project-link">
+                                <div class="project-title">Exploratory Data Analysis</div>
+                            </a>
+                        </div>
+                        <div class="project-item">
+                            <a href="https://github.com/dkanawat/VoiceCraft-Shaping-Strategy-with-NLP" class="project-link">
+                                <div class="project-title">Shaping-Strategy-with-NLP</div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tableau Section -->
+                <div class="platform-card">
+                    <div class="platform-header">
+                        <div class="platform-icon tableau-icon">📊</div>
+                        <div class="platform-info">
+                            <h3>Tableau</h3>
+                            <p>Data Visualization</p>
+                        </div>
+                    </div>
+                    
+                    <div class="projects-list">
+                        <div class="project-item">
+                            <a href="https://public.tableau.com/app/profile/divyani7314/viz/CatvsDogPopulationintheUS_15893203849890/Dashboard1" class="project-link">
+                                <div class="project-title">Cat vs Dog population in the US</div>
+                            </a>
+                        </div>
+                        <div class="project-item">
+                            <a href="https://public.tableau.com/app/profile/divyani7314/viz/mtcarsRdataset_15829338597960/Mtcars" class="project-link">
+                                <div class="project-title">mtcars R Dataset</div>
+                            </a>
+                        </div>
+                        <div class="project-item">
+                            <a href="https://public.tableau.com/app/profile/divyani7314/viz/AirbnbinNewYorkCity_15829910344770/Dashboard1" class="project-link">
+                                <div class="project-title">Airbnb in New York City</div>
+                            </a>
+                        </div>
+                        <div class="project-item">
+                            <a href="https://public.tableau.com/app/profile/divyani7314/viz/BikeSharingDemand_15874818009300/DensitymapDashboard" class="project-link">
+                                <div class="project-title">Bike Sharing Demand</div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- RPubs Section -->
+                <div class="platform-card">
+                    <div class="platform-header">
+                        <div class="platform-icon rpubs-icon">📈</div>
+                        <div class="platform-info">
+                            <h3>RPubs</h3>
+                            <p>Statistical Analysis</p>
+                        </div>
+                    </div>
+                    
+                    <div class="projects-list">
+                        <div class="project-item">
+                            <a href="https://rpubs.com/Dkanawat/649011" class="project-link">
+                                <div class="project-title">Time Series Project</div>
+                            </a>
+                        </div>
+                        <div class="project-item">
+                            <a href="https://rpubs.com/Dkanawat/718035" class="project-link">
+                                <div class="project-title">Clustering Using K-Means</div>
+                            </a>
+                        </div>
+                        <div class="project-item">
+                            <a href="https://rpubs.com/Dkanawat/676367" class="project-link">
+                                <div class="project-title">Social Network Analysis</div>
+                            </a>
+                        </div>
+                        <div class="project-item">
+                            <a href="https://rpubs.com/Dkanawat/674488" class="project-link">
+                                <div class="project-title">Hear Disease Analysis in Power BI</div>
+                            </a>
+                        </div>
+                        <div class="project-item">
+                            <a href="https://rpubs.com/Dkanawat/676376" class="project-link">
+                                <div class="project-title">Maps Using Leaflet</div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </section>
+
+        <section class="contact-section">
+            <h2>Let's Connect</h2>
+            <div class="contact-info">
+                <div class="contact-item">
+                    📧 <a href="mailto:dkkanawat@gmail.com" class="contact-link">dkkanawat@gmail.com</a>
+                </div>
+                <div class="contact-item">
+                    💼 <a href="https://www.linkedin.com/in/divyani-kanawat-b48a4525/" class="contact-link">LinkedIn Profile</a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Smooth project item animations
+            document.querySelectorAll('.project-item').forEach((item, index) => {
+                item.style.opacity = '0';
+                item.style.transform = 'translateX(-10px)';
+                item.style.transition = `opacity 0.4s ease ${index * 0.05}s, transform 0.4s ease ${index * 0.05}s`;
+                
+                setTimeout(() => {
+                    item.style.opacity = '1';
+                    item.style.transform = 'translateX(0)';
+                }, 600 + (index * 50));
+            });
+
+            // Click feedback
+            document.querySelectorAll('.project-link').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    this.style.transform = 'scale(0.98)';
+                    setTimeout(() => {
+                        this.style.transform = '';
+                    }, 100);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
